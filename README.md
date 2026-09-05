@@ -18,7 +18,7 @@ career-agent/
 │   ├── cv_modern.typ     # Modernes, visuelles Typst-Template für CVs (Badges, Pills, Cards)
 │   └── cover_letter_modern.typ # Passendes Anschreiben-Template (Header, DIN-Absätze)
 │   ├── neat_cv.typ        # Adapter für @preview/neat-cv
-│   ├── neat_letter.typ    # Passender neat-cv-Anschreiben-Adapter
+│   ├── neat_letter.typ    # Kompakter Letter-Adapter im neat-cv-Stil
 │   ├── clean_print_cv.typ # Adapter für @preview/clean-print-cv
 │   ├── nabcv.typ          # Adapter für @preview/nabcv
 │   └── nabcv_letter.typ   # Passender nabcv-Anschreiben-Adapter

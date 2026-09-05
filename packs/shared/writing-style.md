@@ -38,7 +38,8 @@ Diese Regeln gelten für CVs, Anschreiben, Job-Analysen und Bewerbungsantworten.
 ## 5. Anschreiben-Qualitätsgates
 
 - Genau vier fokussierte Absätze gemäß dem Cover-Letter-Workflow.
+- Zielumfang: ungefähr 150–230 Wörter; kein Absatz länger als 60 Wörter.
 - Jeder Absatz hat eine klare Aufgabe: Motivation, stärkster Praxisbeleg, ergänzender Mehrwert, nächster Schritt.
-- Pro Absatz höchstens ein bis zwei Kennzahlen; fehlende Kennzahlen nicht durch Füllwörter ersetzen.
+- Höchstens zwei Kennzahlen im gesamten Anschreiben; fehlende Kennzahlen nicht durch Füllwörter ersetzen.
 - Keine Anforderungen behaupten, die im Vault als Gap markiert sind. Gaps intern dokumentieren und nur im Anschreiben thematisieren, wenn es strategisch sinnvoll ist.
 - Vor dem Rendering laut oder gedanklich lesen: Wenn ein Satz beim Sprechen schwerfällig klingt, kürzen oder neu bauen.

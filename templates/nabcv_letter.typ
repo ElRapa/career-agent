@@ -14,12 +14,12 @@
   recipient: recipient,
   date: data.at("date", default: "auto"),
   subject: data.at("subject", default: none),
-  salutation: data.at("salutation", default: none),
+  salutation: data.at("salutation", default: none).replace(",", ""),
   closing: data.at("closing", default: [Kind regards]),
   font-family: (body: "Helvetica Neue",),
 )[
   #for paragraph in data.at("paragraphs", default: ()) [
     #paragraph
-    v(8pt)
+    #v(8pt)
   ]
 ]

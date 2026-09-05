@@ -26,6 +26,15 @@ Alle relevanten Änderungen am Career Agent werden hier festgehalten.
 - `clean-print-cv` liefert keinen eigenen Anschreiben-Renderer.
 - `neat-cv` und `nabcv` verwenden Font Awesome für Icons; die lokale Installation erfolgt mit `brew install --cask font-fontawesome`.
 
+## [Letter Refinement] - 2026-09-05
+
+### Changed
+
+- Anschreiben auf ungefähr 150–230 Wörter und vier klar getrennte Absätze kalibriert.
+- Moderne Letter-Abstände reduziert.
+- Kompakter Letter-Adapter im neat-cv-Stil ergänzt.
+- Nabcv-Letter-Adapter korrigiert, sodass Absatzabstände und Anredezeichen korrekt gerendert werden.
+
 ## [Initial Setup] - 2026-09-05
 
 Der aktuelle Stand des gesamten Repositories wurde am 05.09.2026 aufgesetzt und entwickelt. Dieser Eintrag beschreibt daher das vollständige Initial-Setup des Career Agents und nicht nur nachträgliche Dokumentationsänderungen.

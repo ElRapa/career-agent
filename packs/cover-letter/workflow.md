@@ -6,11 +6,13 @@ Aus der Stellenanzeige oder Firmenangaben:
 - Wenn kein Ansprechpartner angegeben: *"Sehr geehrte Damen und Herren"* oder *"Liebes Recruiting-Team"*.
 
 ## Schritt 2: Aufbau des Anschreibens
-Das Anschreiben besteht aus genau 4 fokussierten Absätzen (maximal 1 DIN A4-Seite):
+Das Anschreiben besteht aus genau 4 fokussierten Absätzen und ungefähr 150–230 Wörtern (maximal 1 DIN A4-Seite):
 1. **Hook & Motivation**: Warum genau dieses Unternehmen und diese Mission? Kein Standard-Einstieg ("Hiermit bewerbe ich mich..."), sondern ein starker Aufhänger.
-2. **Kernkompetenz & Praxisbeleg 1**: Was qualifiziert dich besonders für die Top-Anforderung der Stelle? Verknüpft mit einem realen Projekterfolg aus dem Vault.
-3. **Ergänzender Mehrwert & Praxisbeleg 2**: Wie löst dein Background ein weiteres wichtiges Thema (z. B. Skalierung, Architektur, Team-Führung)?
-4. **Call to Action**: Verfügbarkeit / Kündigungsfrist, Gehaltsvorstellung (falls gefordert), Freude auf das persönliche Gespräch.
+2. **Kernkompetenz & Praxisbeleg 1**: Was qualifiziert dich besonders für die Top-Anforderung der Stelle? Ein realer Projekterfolg aus dem Vault, maximal 2–3 Sätze.
+3. **Ergänzender Mehrwert & Praxisbeleg 2**: Ein zweiter Beleg für Architektur, Zuverlässigkeit oder Zusammenarbeit, maximal 2–3 Sätze.
+4. **Call to Action**: Verfügbarkeit, Arbeitsmodell und Freude auf das Gespräch, maximal 2 Sätze.
+
+Jeder Absatz soll eine klare Aussage tragen. Keine Projektchronik, keine vollständige Skill-Liste und höchstens zwei Kennzahlen im gesamten Anschreiben.
 
 ## Schritt 3: Drafting `cover_letter_data.json`
 Struktur:
