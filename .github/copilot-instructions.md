@@ -6,7 +6,7 @@ This repository is an AI-powered system for generating tailored, modern CVs and 
 
 - **Candidate Data Source**: The user's Obsidian vault. Path is configured dynamically in `.env` (`OBSIDIAN_VAULT_PATH`).
 - **Inspection Tool**: `python3 scripts/vault_helper.py status` or `python3 scripts/vault_helper.py search "<keyword>"`.
-- **Quality Standards**: Strict anti-hallucination, STAR method, and JSON schemas in `packs/shared/conventions.md`.
+- **Quality Standards**: Strict anti-hallucination, calibrated seniority, natural prose, selective STAR method, and JSON schemas in `packs/shared/conventions.md` and `packs/shared/writing-style.md`.
 - **Job Analysis**: Guidelines in `packs/shared/job-analysis.md`.
 - **Renderer**: `./scripts/render.sh <cv|letter> <json_path> <output_pdf>` (uses Typst 0.15+).
 
@@ -22,6 +22,7 @@ This repository is an AI-powered system for generating tailored, modern CVs and 
    - Highlight the 3–4 most relevant projects for the target position.
    - Formulate bullet points using the STAR method (Situation, Task, Action, Result).
    - Order skills so that required technologies appear first.
+   - Apply `packs/shared/writing-style.md`: distinguish contractual and project roles, state discipline-specific experience precisely, and write fluent prose without repetitive approximation words or keyword chains.
 4. **Compile Output**:
    - Save the JSON to `output/<company>/cv_data.json`.
    - Run `./scripts/render.sh cv output/<company>/cv_data.json output/<company>/Lebenslauf_<Name>.pdf`.

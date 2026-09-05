@@ -2,6 +2,15 @@
 
 Alle relevanten Änderungen am Career Agent werden hier festgehalten.
 
+## [Repository Privacy Cleanup] - 2026-09-05
+
+### Changed
+
+- Persönliche Beispielidentität aus den Sample-Daten entfernt und durch `Colin Ford` ersetzt.
+- Karriere-Prompts und Schreibregeln verallgemeinert, damit sie nicht an eine einzelne Person gebunden sind.
+- Lokale Benutzerpfade, persönliche Kontaktdaten und personenbezogene Beispiel-URLs aus dem Repository und seiner veröffentlichten Historie entfernt.
+- Exxeta bleibt als bewusst zugelassener Beispiel- und Kontextname erhalten.
+
 ## [Initial Setup] - 2026-09-05
 
 Der aktuelle Stand des gesamten Repositories wurde am 05.09.2026 aufgesetzt und entwickelt. Dieser Eintrag beschreibt daher das vollständige Initial-Setup des Career Agents und nicht nur nachträgliche Dokumentationsänderungen.

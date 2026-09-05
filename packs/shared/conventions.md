@@ -25,3 +25,13 @@ Jeder Bulletpoint in ausgewählten Projekten sollte nach Möglichkeit der STAR-S
 ## 5. Output-Standard (JSON für Typst)
 - Der Agent generiert immer valides JSON, das direkt vom Typst-Template (`templates/cv_modern.typ` oder `templates/cover_letter_modern.typ`) konsumiert werden kann.
 - Keine Typst-Code-Manipulation nötig: Alle Texte, Formatierungen, Listen und Metadaten werden im JSON-Schema übergeben.
+
+## 6. Schreibqualität und Senioritätskalibrierung
+
+Die ausführlichen Regeln stehen in `packs/shared/writing-style.md` und gelten für jede Bewerbung.
+
+- Vertragliche Rolle, projektbezogene Rolle und fachliche Erfahrung getrennt darstellen.
+- Frühere Berufserfahrung aus einer anderen Disziplin nicht in Jahre der Ziel-Disziplin umrechnen.
+- Natürlich lesbare Sätze mit konkreten Verben schreiben; ATS-Keywords nicht als unnatürliche Keyword-Ketten in Fließtext pressen.
+- Ungefähre Zahlen sparsam und konsistent formulieren. `approximately`, `roughly` oder `about` nicht in jedem Bullet wiederholen.
+- Vor dem Rendering auf Wiederholungen, harte Übergänge, unbelegte Seniorität und vertrauliche Inhalte prüfen.
