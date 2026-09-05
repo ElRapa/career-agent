@@ -35,6 +35,7 @@ Alle relevanten Änderungen am Career Agent werden hier festgehalten.
 - Kompakter Letter-Adapter im neat-cv-Stil ergänzt.
 - Nabcv-Letter-Adapter korrigiert, sodass Absatzabstände und Anredezeichen korrekt gerendert werden.
 - Optionale externe PNG-Unterschrift über `SIGNATURE_PATH` ergänzt; die Datei bleibt außerhalb des Repositories.
+- Signaturbreite in allen Letter-Varianten von 3,2 cm auf 4,8 cm erhöht.
 
 ## [Initial Setup] - 2026-09-05
 

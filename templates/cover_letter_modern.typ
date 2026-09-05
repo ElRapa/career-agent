@@ -115,7 +115,7 @@
 #text(weight: "medium")[#data.closing] \
 #if signature-file != "" [
   #v(0.2cm)
-  #image(signature-file, width: 3.2cm)
+  #image(signature-file, width: 4.8cm)
 ] else [
   #v(0.9cm)
 ]

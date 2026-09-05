@@ -67,7 +67,7 @@
 #text(weight: "medium")[#data.at("closing", default: "Kind regards")]
 #if signature-file != "" [
   #v(0.2cm)
-  #image(signature-file, width: 3.2cm)
+  #image(signature-file, width: 4.8cm)
 ] else [
   #v(0.7cm)
 ]
