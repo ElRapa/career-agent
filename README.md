@@ -12,6 +12,8 @@ Inspiriert von der modularen Pack- und Workflow-Architektur des `exxfer-agent`.
 career-agent/
 ├── .env                  # Lokale Pfade (Obsidian Vault, Akzentfarbe, etc.)
 ├── .env.example          # Vorlage für Umgebungsvariablen
+├── CHANGELOG.md          # Änderungen am Repository und Setup-Hinweise
+├── career-agent.code-workspace # VS-Code-Arbeitsbereich
 ├── templates/
 │   ├── cv_modern.typ     # Modernes, visuelles Typst-Template für CVs (Badges, Pills, Cards)
 │   └── cover_letter_modern.typ # Passendes Anschreiben-Template (Header, DIN-Absätze)
@@ -31,17 +33,23 @@ career-agent/
 ## ⚡ Schnelleinstieg
 
 ### 1. Voraussetzungen
-* **Typst**: `brew install typst`
-* **Python 3**: Bereits auf macOS vorinstalliert
+* **Python 3**: Für `vault_helper.py`; es werden ausschließlich Module aus der Python-Standardbibliothek verwendet
+* **Typst**: `brew install typst` für die PDF-Erzeugung
+* **uv ist nicht erforderlich**: Das Repository hat derzeit keine Python-Abhängigkeiten, kein virtuelles Environment und keinen Lockfile-Bedarf. uv kann optional für einen eigenen Python-Workflow verwendet werden, ist aber nicht Teil des Projekt-Setups.
 
 ### 2. Konfiguration
-Passe die Datei `.env` an:
+Erstelle die lokale Konfiguration aus der Vorlage und passe sie an:
+```bash
+cp .env.example .env
+```
+
+In `.env`:
 ```bash
 # Pfad zu deinem Obsidian Vault (dynamisch & nicht gehardcoded)
 OBSIDIAN_VAULT_PATH="/path/to/your/obsidian-vault"
 
 # Optionaler Unterordner im Vault
-OBSIDIAN_CAREER_SUBDIR=""
+OBSIDIAN_CAREER_SUBDIR="02 Areas/Career"
 
 # Akzentfarbe für Überschriften und Badges (z.B. #1a5fb4, #0f4c81, #0d5c75)
 CV_ACCENT_COLOR="#1a5fb4"
@@ -62,6 +70,8 @@ make test-cv
 make test-letter
 ```
 
+Der konfigurierte Karriere-Unterordner wird automatisch bevorzugt durchsucht. Persönliche Obsidian-Notizen, `.env` und generierte PDFs bleiben außerhalb des Git-Repositories beziehungsweise werden von Git ignoriert.
+
 ---
 
 ## 🤖 Wie der Agent arbeitet (Workflow)
@@ -76,3 +86,7 @@ Wenn du eine neue Bewerbung erstellen willst, übergibst du dem Agenten (z.B. im
    - Der Agent formuliert Projekt-Bullets nach der **STAR-Methode** (*Situation, Task, Action, Result*) um, ohne Fakten zu erfinden (`packs/shared/conventions.md`).
 4. **PDF-Kompilierung**:
    - Der Agent ruft `./scripts/render.sh` auf – in Millisekunden entsteht ein perfektes PDF in `output/`.
+
+## Setup-Entscheidung
+
+Dieses Projekt benötigt aktuell kein `pyproject.toml`, keine `requirements.txt` und keine `uv.lock`, weil `scripts/vault_helper.py` keine externen Python-Pakete verwendet. Die einzige externe Render-Abhängigkeit ist Typst; `scripts/render.sh` prüft dessen Installation vor dem Kompilieren.
