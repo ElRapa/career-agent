@@ -59,6 +59,9 @@ OBSIDIAN_CAREER_SUBDIR="02 Areas/Career"
 
 # Akzentfarbe für Überschriften und Badges (z.B. #1a5fb4, #0f4c81, #0d5c75)
 CV_ACCENT_COLOR="#1a5fb4"
+
+# Optionaler lokaler Pfad zu einer PNG-Unterschrift für Anschreiben
+SIGNATURE_PATH="/path/to/signature.png"
 ```
 
 ### 3. Testlauf & Befehle
@@ -110,6 +113,8 @@ Die JSON-Datenquelle bleibt für alle Renderer identisch. Die vierte Argumentpos
 Für Anschreiben stehen `modern`, `neat-cv` und `nabcv` zur Verfügung. `clean-print-cv` ist ein CV-only-Paket ohne eigenen Letter-Renderer.
 
 Die Pakete werden von Typst beim ersten Lauf aus Typst Universe geladen und sind in den Adaptern versionsgebunden. Die Adapter halten die Karriere-Datenquelle unabhängig vom jeweiligen Layout.
+
+Eine Unterschrift wird nur für Letter-Renderings temporär unter das Typst-Root kopiert und nie ins Repository übernommen. Ist die Datei wegen macOS-Datenschutzrechten nicht lesbar, rendert der Prozess mit einer Warnung ohne Unterschrift.
 
 ## Setup-Entscheidung
 

@@ -3,6 +3,7 @@
 
 #let data-file = sys.inputs.at("data", default: "cover_letter_data.json")
 #let data = json(data-file)
+#let signature-file = sys.inputs.at("signature", default: "")
 
 // Farbschema
 #let accent-hex = data.at("accent_color", default: "#1a5fb4")
@@ -112,5 +113,10 @@
 
 // =================== SIGN-OFF ===================
 #text(weight: "medium")[#data.closing] \
-#v(1.2cm)
+#if signature-file != "" [
+  #v(0.2cm)
+  #image(signature-file, width: 3.2cm)
+] else [
+  #v(0.9cm)
+]
 #text(weight: "bold")[#data.sender.name]

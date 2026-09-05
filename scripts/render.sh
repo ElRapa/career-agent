@@ -16,6 +16,7 @@ TYPE="${1:-}"
 JSON_FILE="${2:-}"
 OUTPUT_PDF="${3:-}"
 VARIANT="${4:-modern}"
+SIGNATURE_DATA_PATH=""
 
 if [[ -z "${TYPE}" || -z "${JSON_FILE}" ]]; then
   echo "Usage: $0 <cv|letter> <path_to_json> [output_pdf_path] [template]"
@@ -86,6 +87,17 @@ case "${TYPE}:${VARIANT}" in
     ;;
 esac
 
+# Signatures stay outside the repository and are copied only for letter renders.
+if [[ "${TYPE}" == "letter" && -n "${SIGNATURE_PATH:-}" ]]; then
+  if [[ -r "${SIGNATURE_PATH}" ]]; then
+    cp "${SIGNATURE_PATH}" "${ROOT_DIR}/.tmp_signature.png"
+    SIGNATURE_DATA_PATH="/.tmp_signature.png"
+  else
+    echo "⚠️ Unterschrift nicht lesbar; Anschreiben wird ohne Unterschrift gerendert:"
+    echo "   ${SIGNATURE_PATH}"
+  fi
+fi
+
 # Bestimme Standard-Ausgabepfad falls nicht angegeben
 if [[ -z "${OUTPUT_PDF}" ]]; then
   OUTPUT_DIR="${OUTPUT_DIR:-${ROOT_DIR}/output}"
@@ -102,9 +114,10 @@ echo "   Template: ${TEMPLATE}"
 echo "   Daten:    ${JSON_ABS}"
 echo "   Ausgabe:  ${OUTPUT_PDF}"
 
-typst compile --root "${ROOT_DIR}" --input data="${TYPST_DATA_PATH}" "${TEMPLATE}" "${OUTPUT_PDF}"
+typst compile --root "${ROOT_DIR}" --input data="${TYPST_DATA_PATH}" --input signature="${SIGNATURE_DATA_PATH}" "${TEMPLATE}" "${OUTPUT_PDF}"
 
 # Aufräumen temporärer Dateien
 rm -f "${ROOT_DIR}/.tmp_data.json"
+rm -f "${ROOT_DIR}/.tmp_signature.png"
 
 echo "✅ PDF erfolgreich generiert: ${OUTPUT_PDF}"

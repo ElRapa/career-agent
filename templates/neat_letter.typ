@@ -1,6 +1,7 @@
 #let data-file = sys.inputs.at("data", default: "cover_letter_data.json")
 #let data = json(data-file)
 #let recipient-data = data.at("recipient", default: (:))
+#let signature-file = sys.inputs.at("signature", default: "")
 
 #let accent = rgb(data.at("accent_color", default: "#1a5fb4"))
 
@@ -66,5 +67,10 @@
 
 #v(0.45cm)
 #text(weight: "medium")[#data.at("closing", default: "Kind regards")],
-#v(0.8cm)
+#if signature-file != "" [
+  #v(0.2cm)
+  #image(signature-file, width: 3.2cm)
+] else [
+  #v(0.7cm)
+]
 #text(weight: "bold")[#data.sender.name]

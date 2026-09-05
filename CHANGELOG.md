@@ -34,6 +34,7 @@ Alle relevanten Änderungen am Career Agent werden hier festgehalten.
 - Moderne Letter-Abstände reduziert.
 - Kompakter Letter-Adapter im neat-cv-Stil ergänzt.
 - Nabcv-Letter-Adapter korrigiert, sodass Absatzabstände und Anredezeichen korrekt gerendert werden.
+- Optionale externe PNG-Unterschrift über `SIGNATURE_PATH` ergänzt; die Datei bleibt außerhalb des Repositories.
 
 ## [Initial Setup] - 2026-09-05
 
