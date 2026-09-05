@@ -15,12 +15,14 @@ fi
 TYPE="${1:-}"
 JSON_FILE="${2:-}"
 OUTPUT_PDF="${3:-}"
+VARIANT="${4:-modern}"
 
 if [[ -z "${TYPE}" || -z "${JSON_FILE}" ]]; then
-  echo "Usage: $0 <cv|letter> <path_to_json> [output_pdf_path]"
+  echo "Usage: $0 <cv|letter> <path_to_json> [output_pdf_path] [template]"
   echo "Examples:"
   echo "  $0 cv sample-data/sample_cv.json output/test_cv.pdf"
   echo "  $0 letter sample-data/sample_letter.json output/test_letter.pdf"
+  echo "  $0 cv sample-data/sample_cv.json output/test_cv.pdf neat-cv"
   exit 1
 fi
 
@@ -44,15 +46,45 @@ else
   TYPST_DATA_PATH="/.tmp_data.json"
 fi
 
-# Bestimme Template
-if [[ "${TYPE}" == "cv" ]]; then
-  TEMPLATE="${ROOT_DIR}/templates/cv_modern.typ"
-elif [[ "${TYPE}" == "letter" ]]; then
-  TEMPLATE="${ROOT_DIR}/templates/cover_letter_modern.typ"
-else
-  echo "❌ Ungültiger Typ: '${TYPE}'. Erlaubt sind 'cv' oder 'letter'."
-  exit 1
-fi
+# Bestimme Template-Variante
+case "${TYPE}:${VARIANT}" in
+  cv:modern)
+    TEMPLATE="${ROOT_DIR}/templates/cv_modern.typ"
+    ;;
+  cv:neat-cv)
+    TEMPLATE="${ROOT_DIR}/templates/neat_cv.typ"
+    ;;
+  cv:clean-print-cv)
+    TEMPLATE="${ROOT_DIR}/templates/clean_print_cv.typ"
+    ;;
+  cv:nabcv)
+    TEMPLATE="${ROOT_DIR}/templates/nabcv.typ"
+    ;;
+  letter:modern)
+    TEMPLATE="${ROOT_DIR}/templates/cover_letter_modern.typ"
+    ;;
+  letter:neat-cv)
+    TEMPLATE="${ROOT_DIR}/templates/neat_letter.typ"
+    ;;
+  letter:nabcv)
+    TEMPLATE="${ROOT_DIR}/templates/nabcv_letter.typ"
+    ;;
+  letter:clean-print-cv)
+    echo "❌ 'clean-print-cv' enthält keinen Anschreiben-Renderer."
+    echo "   Verwende 'modern', 'neat-cv' oder 'nabcv' für Anschreiben."
+    exit 1
+    ;;
+  cv:*|letter:*)
+    echo "❌ Unbekannte Template-Variante: '${VARIANT}'."
+    echo "   CV: modern, neat-cv, clean-print-cv, nabcv"
+    echo "   Anschreiben: modern, neat-cv, nabcv"
+    exit 1
+    ;;
+  *)
+    echo "❌ Ungültiger Typ: '${TYPE}'. Erlaubt sind 'cv' oder 'letter'."
+    exit 1
+    ;;
+esac
 
 # Bestimme Standard-Ausgabepfad falls nicht angegeben
 if [[ -z "${OUTPUT_PDF}" ]]; then
@@ -65,6 +97,7 @@ else
 fi
 
 echo "🚀 Kompiliere mit Typst..."
+echo "   Variante:  ${VARIANT}"
 echo "   Template: ${TEMPLATE}"
 echo "   Daten:    ${JSON_ABS}"
 echo "   Ausgabe:  ${OUTPUT_PDF}"

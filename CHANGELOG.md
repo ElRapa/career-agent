@@ -11,6 +11,21 @@ Alle relevanten Änderungen am Career Agent werden hier festgehalten.
 - Lokale Benutzerpfade, persönliche Kontaktdaten und personenbezogene Beispiel-URLs aus dem Repository und seiner veröffentlichten Historie entfernt.
 - Exxeta bleibt als bewusst zugelassener Beispiel- und Kontextname erhalten.
 
+## [Template Variants] - 2026-09-05
+
+### Added
+
+- Drei parallele CV-Renderer auf Basis von `neat-cv`, `clean-print-cv` und `nabcv`.
+- `neat-cv`- und `nabcv`-Adapter für Anschreiben.
+- Optionale Template-Auswahl als viertes Argument von `scripts/render.sh`.
+- Makefile-Ziel `make test-variants` für die drei CV-Varianten und die verfügbaren Letter-Varianten.
+
+### Notes
+
+- Alle Varianten verwenden weiterhin dieselbe JSON-Datenquelle.
+- `clean-print-cv` liefert keinen eigenen Anschreiben-Renderer.
+- `neat-cv` und `nabcv` verwenden Font Awesome für Icons; die lokale Installation erfolgt mit `brew install --cask font-fontawesome`.
+
 ## [Initial Setup] - 2026-09-05
 
 Der aktuelle Stand des gesamten Repositories wurde am 05.09.2026 aufgesetzt und entwickelt. Dieser Eintrag beschreibt daher das vollständige Initial-Setup des Career Agents und nicht nur nachträgliche Dokumentationsänderungen.
@@ -21,12 +36,12 @@ Der aktuelle Stand des gesamten Repositories wurde am 05.09.2026 aufgesetzt und 
 - Am 05.09.2026 wurde die initiale Karriere-Datenbasis im konfigurierten Obsidian-Vault erstellt und strukturiert. Sie umfasst 21 validierte Karriere-Notizen zu Profil, Berufserfahrung, Projekten, Kompetenzen, Ausbildung, Präferenzen und Zeugnis-Evidenz.
 - VS-Code-Arbeitsbereich `career-agent.code-workspace`.
 - Dokumentation der Repository-Struktur, des Obsidian-Karriere-Unterordners und des lokalen Setup-Ablaufs.
-- Explizite Setup-Entscheidung: Das Projekt benötigt aktuell keine Python-Paketverwaltung mit `uv`, weil das Vault-Hilfsskript ausschließlich die Python-Standardbibliothek verwendet.
+- Explizite Setup-Entscheidung: Das Projekt benötigt aktuell keine Python-Paketverwaltung mit `uv`, weil das Vault-Hilfsskript ausschließlich die Python-Standardbibliothek verwendet. Typst-Universe-Pakete für alternative Layouts werden von Typst verwaltet.
 
 ### Changed
 
 - `.env.example` verwendet einen neutralen Platzhalter für den lokalen Obsidian-Pfad.
-- Die README beschreibt Typst als einzige externe Render-Abhängigkeit und erklärt die Trennung zwischen Repository und persönlichem Obsidian-Vault.
+- Die README beschreibt Typst und die versionsgebundenen Typst-Universe-Pakete als Render-Abhängigkeiten und erklärt die Trennung zwischen Repository und persönlichem Obsidian-Vault.
 
 ### Notes
 

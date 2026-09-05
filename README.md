@@ -17,6 +17,11 @@ career-agent/
 ├── templates/
 │   ├── cv_modern.typ     # Modernes, visuelles Typst-Template für CVs (Badges, Pills, Cards)
 │   └── cover_letter_modern.typ # Passendes Anschreiben-Template (Header, DIN-Absätze)
+│   ├── neat_cv.typ        # Adapter für @preview/neat-cv
+│   ├── neat_letter.typ    # Passender neat-cv-Anschreiben-Adapter
+│   ├── clean_print_cv.typ # Adapter für @preview/clean-print-cv
+│   ├── nabcv.typ          # Adapter für @preview/nabcv
+│   └── nabcv_letter.typ   # Passender nabcv-Anschreiben-Adapter
 ├── packs/                # Modulare Instruktionen für den KI-Agenten
 │   ├── shared/           # Fact-Checking (Anti-Halluzination), STAR-Methode, ATS-Optimierung
 │   ├── cv-tailored/      # Workflow & Schema für maßgeschneiderte Lebensläufe
@@ -35,6 +40,7 @@ career-agent/
 ### 1. Voraussetzungen
 * **Python 3**: Für `vault_helper.py`; es werden ausschließlich Module aus der Python-Standardbibliothek verwendet
 * **Typst**: `brew install typst` für die PDF-Erzeugung
+* **Font Awesome 7**: `brew install --cask font-fontawesome` für die Icon-Ausgabe von `neat-cv` und `nabcv`
 * **uv ist nicht erforderlich**: Das Repository hat derzeit keine Python-Abhängigkeiten, kein virtuelles Environment und keinen Lockfile-Bedarf. uv kann optional für einen eigenen Python-Workflow verwendet werden, ist aber nicht Teil des Projekt-Setups.
 
 ### 2. Konfiguration
@@ -68,6 +74,9 @@ make test-cv
 
 # 4. Test-Anschreiben als PDF kompilieren
 make test-letter
+
+# 5. Alle alternativen CV-/Anschreiben-Varianten testen
+make test-variants
 ```
 
 Der konfigurierte Karriere-Unterordner wird automatisch bevorzugt durchsucht. Persönliche Obsidian-Notizen, `.env` und generierte PDFs bleiben außerhalb des Git-Repositories beziehungsweise werden von Git ignoriert.
@@ -85,8 +94,23 @@ Wenn du eine neue Bewerbung erstellen willst, übergibst du dem Agenten (z.B. im
 3. **Drafting (`cv_data.json`)**:
    - Der Agent formuliert Projekt-Bullets nach der **STAR-Methode** (*Situation, Task, Action, Result*) um, ohne Fakten zu erfinden (`packs/shared/conventions.md`).
 4. **PDF-Kompilierung**:
-   - Der Agent ruft `./scripts/render.sh` auf – in Millisekunden entsteht ein perfektes PDF in `output/`.
+   - Der Agent ruft `./scripts/render.sh` auf – in Millisekunden entsteht ein PDF in `output/`.
+
+## Template-Varianten
+
+Die JSON-Datenquelle bleibt für alle Renderer identisch. Die vierte Argumentposition von `render.sh` wählt die Darstellung:
+
+```bash
+./scripts/render.sh cv <cv_data.json> <output.pdf> modern
+./scripts/render.sh cv <cv_data.json> <output.pdf> neat-cv
+./scripts/render.sh cv <cv_data.json> <output.pdf> clean-print-cv
+./scripts/render.sh cv <cv_data.json> <output.pdf> nabcv
+```
+
+Für Anschreiben stehen `modern`, `neat-cv` und `nabcv` zur Verfügung. `clean-print-cv` ist ein CV-only-Paket ohne eigenen Letter-Renderer.
+
+Die Pakete werden von Typst beim ersten Lauf aus Typst Universe geladen und sind in den Adaptern versionsgebunden. Die Adapter halten die Karriere-Datenquelle unabhängig vom jeweiligen Layout.
 
 ## Setup-Entscheidung
 
-Dieses Projekt benötigt aktuell kein `pyproject.toml`, keine `requirements.txt` und keine `uv.lock`, weil `scripts/vault_helper.py` keine externen Python-Pakete verwendet. Die einzige externe Render-Abhängigkeit ist Typst; `scripts/render.sh` prüft dessen Installation vor dem Kompilieren.
+Dieses Projekt benötigt aktuell kein `pyproject.toml`, keine `requirements.txt` und keine `uv.lock`, weil `scripts/vault_helper.py` keine externen Python-Pakete verwendet. Die zentrale Render-Abhängigkeit ist Typst; die alternativen Layouts laden ihre versionsgebundenen Typst-Universe-Pakete beim ersten Lauf. `scripts/render.sh` prüft die Typst-Installation vor dem Kompilieren.

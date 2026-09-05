@@ -102,3 +102,13 @@ oder direkt mit Typst:
 ```bash
 typst compile --input data="<pfad-zu-cv_data.json>" templates/cv_modern.typ "<output-pfad.pdf>"
 ```
+
+Für alternative Layouts kann `scripts/render.sh` dieselbe JSON-Quelle mit einer Template-Variante rendern:
+
+```bash
+./scripts/render.sh cv <pfad-zu-cv_data.json> <output-pfad.pdf> neat-cv
+./scripts/render.sh cv <pfad-zu-cv_data.json> <output-pfad.pdf> clean-print-cv
+./scripts/render.sh cv <pfad-zu-cv_data.json> <output-pfad.pdf> nabcv
+```
+
+Das JSON-Schema bleibt dabei unverändert; die Typst-Adapter übernehmen die Abbildung auf die jeweilige Paket-API.
