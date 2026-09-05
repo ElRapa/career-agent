@@ -1,0 +1,123 @@
+{
+  "personal": {
+    "name": "Colin Ford",
+    "title": "Lead Cloud & Data Architect",
+    "email": "colin.ford@example.com",
+    "phone": "+49 170 1234567",
+    "location": "Köln / Remote",
+    "linkedin": "https://linkedin.com/in/colin-ford",
+    "github": "https://github.com/colin-ford"
+  },
+  "accent_color": "#1a5fb4",
+  "language": "de",
+  "summary": "Strategischer Architekt und technischer Enabler mit über 8 Jahren Erfahrung in der Konzeption hochskalierbarer Cloud-Plattformen, Data Lakehouses und agentischer KI-Workflows. Verbindet tiefes Technologieverständnis (Databricks, AWS, Kubernetes) mit agilem Leadership und unternehmerischem Pragmatismus.",
+  "labels": {
+    "skills": "Kernkompetenzen",
+    "projects": "Ausgewählte Projekte & Praxisbelege",
+    "experience": "Beruflicher Werdegang",
+    "education": "Ausbildung",
+    "certifications": "Zertifizierungen"
+  },
+  "skills": [
+    {
+      "category": "Cloud & Infrastructure",
+      "items": ["AWS", "Azure", "Kubernetes", "Terraform", "Docker", "CI/CD (GitLab/GitHub Actions)"]
+    },
+    {
+      "category": "Data & AI Engineering",
+      "items": ["Databricks", "Apache Spark", "Delta Lake", "Unity Catalog", "LLM Workflows & Agents", "Python"]
+    },
+    {
+      "category": "Architektur & Methoden",
+      "items": ["Microservices", "Event-Driven Architecture", "Domain-Driven Design (DDD)", "DevOps & SRE", "Agile Leadership"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Enterprise Data Lakehouse & AI Analytics",
+      "client": "Großkunde Automotive",
+      "role": "Lead Data Architect",
+      "period": "03/2024 – heute",
+      "tech": ["Databricks", "Delta Lake", "Unity Catalog", "PySpark", "Terraform"],
+      "bullets": [
+        "Konzeption und Aufbau einer unternehmensweiten Data-Lakehouse-Plattform mit Databricks und Unity Catalog für über 150 Analysten und Data Scientists.",
+        "Implementierung von Zero-Trust Governance und automatisierter Datenmaskierung, wodurch Audits 60% schneller abgeschlossen wurden.",
+        "Reduzierung der ETL-Laufzeiten um 45% durch Optimierung von Partitionierungs- und Liquid Clustering-Strategien."
+      ]
+    },
+    {
+      "title": "Agentische Reporting- & Code-Analyse-Plattform",
+      "client": "Exxeta Labs",
+      "role": "Principal Engineer / Architect",
+      "period": "10/2024 – 02/2025",
+      "tech": ["Python", "Neo4j", "ChromaDB", "Model Context Protocol (MCP)", "Docker"],
+      "bullets": [
+        "Entwurf einer MCP-basierten Architektur zur automatischen Analyse von Enterprise-Codebases mittels Graph- und Vektordatenbanken.",
+        "Orchestrierung von LLM-Agenten zur vollautomatischen Generierung auditierbarer Architektur- und Migrationsreports.",
+        "Implementierung von Qualitäts-Gates und Verifikations-Routinen, die Halluzinationen in technischen Berichten eliminieren."
+      ]
+    },
+    {
+      "title": "Cloud Migration & Plattform-Modernisierung",
+      "client": "FinTech / Banking",
+      "role": "Cloud Architect",
+      "period": "01/2023 – 02/2024",
+      "tech": ["AWS", "EKS", "Terraform", "Kafka", "PostgreSQL"],
+      "bullets": [
+        "Leitung der Cloud-Migration eines monolithischen Zahlungssystems in eine hochverfügbare Microservice-Architektur auf AWS EKS.",
+        "Aufbau von GitOps-Workflows (ArgoCD) und Zero-Downtime Deployment-Strategien (Canary/Blue-Green).",
+        "Erhöhung der Systemverfügbarkeit auf 99,95% bei gleichzeitiger Senkung der Infrastrukturkosten um 25%."
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Exxeta AG",
+      "role": "Lead Cloud & Data Architect",
+      "location": "Frankfurt / Köln",
+      "period": "2022 – heute",
+      "bullets": [
+        "Fachliche Führung interdisziplinärer Engineering-Teams in komplexen Kundenprojekten.",
+        "Verantwortung für Technologie-Evaluationen, Architektur-Blueprints und Best Practices im Bereich Cloud & Data."
+      ]
+    },
+    {
+      "company": "IT-Consulting GmbH",
+      "role": "Senior Cloud Consultant",
+      "location": "Köln",
+      "period": "2018 – 2022",
+      "bullets": [
+        "Konzeption und Umsetzung von Cloud-Infrastrukturen und DevOps-Pipelines für DAX-Konzerne."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Science (M.Sc.) Informatik",
+      "institution": "Universität zu Köln",
+      "period": "2016 – 2018"
+    },
+    {
+      "degree": "Bachelor of Science (B.Sc.) Wirtschaftsinformatik",
+      "institution": "TH Köln",
+      "period": "2013 – 2016"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Databricks Certified Solutions Architect",
+      "issuer": "Databricks",
+      "year": "2024"
+    },
+    {
+      "name": "AWS Certified Solutions Architect – Professional",
+      "issuer": "Amazon Web Services",
+      "year": "2023"
+    },
+    {
+      "name": "Certified Kubernetes Administrator (CKA)",
+      "issuer": "Cloud Native Computing Foundation",
+      "year": "2022"
+    }
+  ]
+}

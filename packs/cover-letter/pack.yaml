@@ -1,0 +1,6 @@
+name: cover-letter
+title: Passgenaues Anschreiben (Cover Letter)
+description: Formuliert ein überzeugendes, prägnantes Anschreiben passend zur Stelle und generiert ein modernes Typst-PDF.
+version: 1.0.0
+template: templates/cover_letter_modern.typ
+output_format: json -> pdf

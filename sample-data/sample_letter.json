@@ -1,0 +1,30 @@
+{
+  "sender": {
+    "name": "Colin Ford",
+    "title": "Lead Cloud & Data Architect",
+    "email": "colin.ford@example.com",
+    "phone": "+49 170 1234567",
+    "location": "Köln"
+  },
+  "recipient": {
+    "company": "Tech Innovations AG",
+    "department": "Platform Engineering",
+    "contact_person": "Frau Dr. Helena Weber",
+    "address": "Innovationsallee 42",
+    "city": "80333 München"
+  },
+  "accent_color": "#1a5fb4",
+  "language": "de",
+  "date": "05. September 2026",
+  "location": "Köln",
+  "subject": "Bewerbung als Principal Cloud & Platform Architect",
+  "reference": "REF-ARCH-2026",
+  "salutation": "Sehr geehrte Frau Dr. Weber,",
+  "paragraphs": [
+    "die Skalierung moderner Cloud-Plattformen an der Schnittstelle zwischen robuster Enterprise-Architektur und innovativen KI-Workflows ist meine Leidenschaft. Die Vision der Tech Innovations AG, eine unternehmensweite Plattform für datengetriebene Services aufzubauen, deckt sich exakt mit meinen bisherigen Schwerpunkten als Lead Architect.",
+    "In meiner aktuellen Rolle bei der Exxeta AG verantworte ich die Konzeption hochverfügbarer Cloud- und Datenarchitekturen für namhafte Enterprise-Kunden. So konnte ich kürzlich für einen führenden Automobilkonzern ein modernes Databricks-Lakehouse etablieren, das über 150 Analysten befähigt und ETL-Laufzeiten um 45% senkte. Dabei lege ich stets Wert auf pragmatische Umsetzbarkeit, messbare Business-Werte und klare Architektur-Leitplanken.",
+    "Neben der technischen Tiefe in AWS, Kubernetes und modernen Datenplattformen bringe ich fundierte Erfahrung im Führen und Befähigen agiler Engineering-Teams mit. Ich verstehe mich als Brückenbauer zwischen Business-Anforderungen und technologischer Exzellenz, der komplexe Sachverhalte verständlich vermittelt und Teams motiviert, über sich hinauszuwachsen.",
+    "Ich freue mich darauf, meine Erfahrung in Plattform-Architektur und agiler Führung gewinnbringend bei Ihnen einzubringen, und stehe für ein persönliches Kennenlernen jederzeit gerne zur Verfügung."
+  ],
+  "closing": "Mit besten Grüßen"
+}

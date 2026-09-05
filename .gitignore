@@ -1,0 +1,21 @@
+# Environment
+.env
+.env.local
+
+# Build output
+output/
+*.pdf
+cv_data.json
+cover_letter_data.json
+
+# OS and Editor
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Python / Virtualenv (falls Hilfsscripte genutzt werden)
+__pycache__/
+*.py[cod]
+.venv/
+venv/

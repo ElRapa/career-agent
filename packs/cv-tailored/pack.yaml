@@ -1,0 +1,6 @@
+name: cv-tailored
+title: Maßgeschneiderter Lebenslauf (CV)
+description: Analysiert eine Stellenausschreibung, sucht passende Projekte im Obsidian-Vault und generiert ein modernes Typst-PDF.
+version: 1.0.0
+template: templates/cv_modern.typ
+output_format: json -> pdf
