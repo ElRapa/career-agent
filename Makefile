@@ -1,4 +1,4 @@
-.PHONY: help status search test-cv test-letter test-cv-neat test-cv-clean test-cv-nabcv test-letter-neat test-letter-nabcv test-variants clean
+.PHONY: help status search test-cv test-letter test-cv-neat test-cv-clean test-cv-nabcv test-letter-neat test-letter-clean test-letter-nabcv test-variants clean
 
 help:
 	@echo "Verfügbare Befehle für Career Agent:"
@@ -9,7 +9,8 @@ help:
 	@echo "  make test-cv-neat   - Rendert die neat-cv-Variante"
 	@echo "  make test-cv-clean  - Rendert die clean-print-cv-Variante"
 	@echo "  make test-cv-nabcv  - Rendert die nabcv-Variante"
-	@echo "  make test-variants  - Rendert alle drei CV-Varianten und Letter-Varianten"
+	@echo "  make test-letter-clean - Rendert den clean-print-Letter"
+	@echo "  make test-variants  - Rendert alle vier CV-Varianten und Letter-Varianten"
 	@echo "  make clean          - Löscht generierte Dateien im output-Ordner"
 
 status:
@@ -36,10 +37,13 @@ test-cv-nabcv:
 test-letter-neat:
 	./scripts/render.sh letter sample-data/sample_letter.json output/test_letter_neat.pdf neat-cv
 
+test-letter-clean:
+	./scripts/render.sh letter sample-data/sample_letter.json output/test_letter_clean_print.pdf clean-print-cv
+
 test-letter-nabcv:
 	./scripts/render.sh letter sample-data/sample_letter.json output/test_letter_nabcv.pdf nabcv
 
-test-variants: test-cv-neat test-cv-clean test-cv-nabcv test-letter-neat test-letter-nabcv
+test-variants: test-cv-neat test-cv-clean test-cv-nabcv test-letter-neat test-letter-clean test-letter-nabcv
 
 clean:
 	rm -rf output/*.pdf

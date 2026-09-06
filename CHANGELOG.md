@@ -16,14 +16,17 @@ Alle relevanten Änderungen am Career Agent werden hier festgehalten.
 ### Added
 
 - Drei parallele CV-Renderer auf Basis von `neat-cv`, `clean-print-cv` und `nabcv`.
-- `neat-cv`- und `nabcv`-Adapter für Anschreiben.
+- `neat-cv`-, `clean-print-cv`- und `nabcv`-Adapter für Anschreiben.
 - Optionale Template-Auswahl als viertes Argument von `scripts/render.sh`.
 - Makefile-Ziel `make test-variants` für die drei CV-Varianten und die verfügbaren Letter-Varianten.
+- Clean-Print-Letter als lokaler, einspaltiger Anschreibenadapter.
+- Sprachdaten als gemeinsame CV-Datenquelle für Deutsch/Englisch und die entsprechenden Renderer.
+- Neat-CV auf eine kompakte A4-Ein-Seiten-Variante mit dezenterem Header angepasst.
 
 ### Notes
 
 - Alle Varianten verwenden weiterhin dieselbe JSON-Datenquelle.
-- `clean-print-cv` liefert keinen eigenen Anschreiben-Renderer.
+- Der Clean-Print-Letter ist ein lokaler Adapter, da das Universe-Paket selbst keinen Letter-Renderer liefert.
 - `neat-cv` und `nabcv` verwenden Font Awesome für Icons; die lokale Installation erfolgt mit `brew install --cask font-fontawesome`.
 
 ## [Letter Refinement] - 2026-09-05

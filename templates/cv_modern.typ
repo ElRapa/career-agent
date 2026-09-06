@@ -131,6 +131,18 @@
   )
 ]
 
+#if "languages" in data and data.languages.len() > 0 [
+  #section-heading(data.at("labels", default: ()).at("languages", default: "Sprachen"))
+  #grid(
+    columns: (130pt, 1fr),
+    row-gutter: 0.45em,
+    ..data.languages.map(language => (
+      text(weight: "bold", fill: text-dark, size: 9pt)[#language.language:],
+      text(fill: text-muted, size: 9pt)[#language.at("level", default: "")]
+    )).flatten()
+  )
+]
+
 // =================== AUSGEWÄHLTE PROJEKTE ===================
 #if "projects" in data and data.projects.len() > 0 [
   #section-heading(data.at("labels", default: ()).at("projects", default: "Ausgewählte Projekte & Praxisbelege"))

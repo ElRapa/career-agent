@@ -20,6 +20,7 @@ career-agent/
 │   ├── neat_cv.typ        # Adapter für @preview/neat-cv
 │   ├── neat_letter.typ    # Kompakter Letter-Adapter im neat-cv-Stil
 │   ├── clean_print_cv.typ # Adapter für @preview/clean-print-cv
+│   ├── clean_print_letter.typ # Kompakter Clean-Print-Letter-Adapter
 │   ├── nabcv.typ          # Adapter für @preview/nabcv
 │   └── nabcv_letter.typ   # Passender nabcv-Anschreiben-Adapter
 ├── packs/                # Modulare Instruktionen für den KI-Agenten
@@ -110,7 +111,7 @@ Die JSON-Datenquelle bleibt für alle Renderer identisch. Die vierte Argumentpos
 ./scripts/render.sh cv <cv_data.json> <output.pdf> nabcv
 ```
 
-Für Anschreiben stehen `modern`, `neat-cv` und `nabcv` zur Verfügung. `clean-print-cv` ist ein CV-only-Paket ohne eigenen Letter-Renderer.
+Für Anschreiben stehen `modern`, `neat-cv`, `clean-print-cv` und `nabcv` zur Verfügung. `clean-print-cv` erhält dabei einen lokalen, zum Print-CV passenden Letter-Adapter.
 
 Die Pakete werden von Typst beim ersten Lauf aus Typst Universe geladen und sind in den Adaptern versionsgebunden. Die Adapter halten die Karriere-Datenquelle unabhängig vom jeweiligen Layout.
 

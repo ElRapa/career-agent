@@ -21,6 +21,16 @@
     github: data.personal.at("github", default: ""),
   ),
   accent-color: rgb(data.at("accent_color", default: "#1a5fb4")),
+  header-color: rgb("#64748b"),
+  paper-size: "a4",
+  body-font-size: 8.3pt,
+  layout-overrides: (
+    side-width: 4.4cm,
+    header-padding: 6mm,
+    header-body-gap: 2mm,
+    page-margin-x: 9mm,
+    page-margin-y: 9mm,
+  ),
   heading-font: "Helvetica Neue",
   body-font: ("Helvetica Neue", "Arial"),
 )
@@ -45,6 +55,13 @@
     ]
   ]
 
+  #if "projects" in data [
+    = Selected Work
+    #for project in data.projects [
+      #text(size: 8pt, weight: "medium")[#project.at("title", default: "")]
+    ]
+  ]
+
   #v(1fr)
   #social-links()
 ][
@@ -57,19 +74,6 @@
       date: experience.at("period", default: ""),
     )[
       #for bullet in experience.at("bullets", default: ()) [
-        - #bullet
-      ]
-    ]
-  ]
-
-  = Selected Projects
-  #for project in data.at("projects", default: ()) [
-    #entry(
-      title: project.at("title", default: ""),
-      institution: project.at("client", default: ""),
-      date: project.at("period", default: ""),
-    )[
-      #for bullet in project.at("bullets", default: ()) [
         - #bullet
       ]
     ]
@@ -93,8 +97,6 @@
       title: certification.at("name", default: ""),
       institution: certification.at("issuer", default: ""),
       date: certification.at("year", default: ""),
-    )[
-      #certification.at("issuer", default: "")
-    ]
+    )[]
   ]
 ]

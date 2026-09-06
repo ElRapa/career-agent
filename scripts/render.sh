@@ -71,14 +71,12 @@ case "${TYPE}:${VARIANT}" in
     TEMPLATE="${ROOT_DIR}/templates/nabcv_letter.typ"
     ;;
   letter:clean-print-cv)
-    echo "❌ 'clean-print-cv' enthält keinen Anschreiben-Renderer."
-    echo "   Verwende 'modern', 'neat-cv' oder 'nabcv' für Anschreiben."
-    exit 1
+    TEMPLATE="${ROOT_DIR}/templates/clean_print_letter.typ"
     ;;
   cv:*|letter:*)
     echo "❌ Unbekannte Template-Variante: '${VARIANT}'."
     echo "   CV: modern, neat-cv, clean-print-cv, nabcv"
-    echo "   Anschreiben: modern, neat-cv, nabcv"
+    echo "   Anschreiben: modern, neat-cv, clean-print-cv, nabcv"
     exit 1
     ;;
   *)

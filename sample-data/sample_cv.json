@@ -18,6 +18,18 @@
     "education": "Ausbildung",
     "certifications": "Zertifizierungen"
   },
+  "languages": [
+    {
+      "language": "English",
+      "level": "Native",
+      "dots": 5
+    },
+    {
+      "language": "German",
+      "level": "Professional",
+      "dots": 4
+    }
+  ],
   "skills": [
     {
       "category": "Cloud & Infrastructure",

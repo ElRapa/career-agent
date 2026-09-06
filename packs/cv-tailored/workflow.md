@@ -46,6 +46,13 @@ Erstelle eine JSON-Datei mit folgender Struktur:
       "items": ["AWS", "Kubernetes", "Terraform", "CI/CD"]
     }
   ],
+  "languages": [
+    {
+      "language": "English",
+      "level": "C1",
+      "dots": 4
+    }
+  ],
   "projects": [
     {
       "title": "Projektname",

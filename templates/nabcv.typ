@@ -36,10 +36,21 @@
   highlights: item.at("details", default: ""),
 ))
 
-#let skills = data.at("skills", default: ()).map(group => (
+#let base-skills = data.at("skills", default: ()).map(group => (
   group: group.at("category", default: ""),
   items: group.at("items", default: ()),
 ))
+
+#let language-skills = if data.at("languages", default: ()).len() > 0 {
+  ((
+    group: "Languages",
+    items: data.languages.map(language => language.language + " (" + language.at("level", default: "") + ")"),
+  ),)
+} else {
+  ()
+}
+
+#let skills = base-skills + language-skills
 
 #cv(
   name: data.personal.name,
